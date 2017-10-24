@@ -168,6 +168,10 @@
         [button setContentEdgeInsets:[NUISettings getEdgeInsets:@"content-insets" withClass:className]];
     }
     
+    if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
+        [button setTintColor:[NUISettings getColor:@"tint-color" withClass: className]];
+    }
+    
     [NUIViewRenderer renderBorder:button withClass:className];
     
     // If a shadow-* is configured and corner-radius is set disable mask to bounds and fall back to manually applying corner radius to all sub-views (except the label)
